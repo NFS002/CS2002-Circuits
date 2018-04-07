@@ -119,7 +119,6 @@ void simulateCircuit(unsigned int i, bool reset, bool synchronous) {
 * or asynchronously
 * @see simulateCircuit()
 */
-}
 void initializeCircuitInputs(unsigned int i, bool reset, bool synchronous) {
 	curr_circuit_time = 0;
 	unsigned int n_inp = countInputs();
