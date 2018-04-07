@@ -38,7 +38,7 @@ void processLine(char* str, unsigned int line_num) {
   assert(length >= 0 && length <= 4);
   while (word_num < length) {
     char* word = strdup(str_arr[word_num]);
-    char* gate_id = malloc(2 * sizeof(char));
+    char* gate_id = malloc(sizeof(char));
     CircuitNode* node = NULL;
     switch(word_num){
       case 3: //WIRE: ID = word, FUNC = "WIRE"
