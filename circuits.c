@@ -28,7 +28,7 @@
  */
 void processLine(char* str, unsigned int line_num) {
   ///*DBG*/printf("processLine (%d) :  %s\n",line_num,str);
-  char** str_arr = malloc(4 * sizeof(char*));
+  char** str_arr = malloc(sizeof(char));
   char* dl = " ";
   trimString(str);
   unsigned int length = splitString(str, dl, str_arr);
@@ -39,7 +39,7 @@ void processLine(char* str, unsigned int line_num) {
   while (word_num < length) {
     char* word = strdup(str_arr[word_num]);
     char* gate_id = malloc(2 * sizeof(char));
-    CircuitNode* node;
+    CircuitNode* node = NULL;
     switch(word_num){
       case 3: //WIRE: ID = word, FUNC = "WIRE"
         node = findNodebyId(word);
@@ -83,6 +83,7 @@ void processLine(char* str, unsigned int line_num) {
     nodes[1]->out = nodes[0];
     nodes[0]->inp_1 = nodes[1];
   }
+  free(str_arr);
 }
 
 
@@ -316,11 +317,10 @@ void freeCircuit( void ) {
 * @param res where to store the result.
 */
 unsigned int splitString(char str[], char* dl, char** res){
-    char *token;
+    char *token = NULL;
     char *rest = str;
     unsigned int i = 0;
     while ((token = strtok_r(rest, dl, &rest))) {
-        res[i] = malloc(20 * sizeof(char));
         res[i] = token;
         i++;
     }
