@@ -1,0 +1,754 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="circuits_8h" kind="file" language="C++">
+    <compoundname>circuits.h</compoundname>
+    <includedby refid="circuits_8c" local="yes">circuits.c</includedby>
+    <invincdepgraph>
+      <node id="13">
+        <label>circuits.c</label>
+        <link refid="circuits_8c"/>
+      </node>
+      <node id="12">
+        <label>circuits.h</label>
+        <link refid="circuits_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structCircuitNode" prot="public">CircuitNode</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="circuits_8h_1a05384f0ec755cd00a8e4ed46677ccd42" prot="public" static="no">
+        <type>struct <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref></type>
+        <definition>typedef struct CircuitNode  CircuitNode</definition>
+        <argsstring></argsstring>
+        <name>CircuitNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="46" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="circuits_8h_1aa7deac37d97b85aae9a379c55f711954" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int max_circuit_time</definition>
+        <argsstring></argsstring>
+        <name>max_circuit_time</name>
+        <initializer>= 1000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="15" column="1" bodyfile="circuits.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int circuit_size</definition>
+        <argsstring></argsstring>
+        <name>circuit_size</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="20" column="1" bodyfile="circuits.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="circuits_8h_1af3d5a9601f1bb080e7c9d24666499d82" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int min_circuit_time</definition>
+        <argsstring></argsstring>
+        <name>min_circuit_time</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="23" column="1" bodyfile="circuits.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int curr_circuit_time</definition>
+        <argsstring></argsstring>
+        <name>curr_circuit_time</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="26" column="1" bodyfile="circuits.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="circuits_8h_1af2b766444d39998c4a3f68c9ed947837" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int circuit_run_time</definition>
+        <argsstring></argsstring>
+        <name>circuit_run_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="30" column="1" bodyfile="circuits.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" prot="public" static="no" mutable="no">
+        <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>CircuitNode* circuit[circuit_size]</definition>
+        <argsstring>[circuit_size]</argsstring>
+        <name>circuit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>List of all supported functions: AND NAND WIRE NOT OR NOR XOR IN </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="61" column="1" bodyfile="circuits.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="circuits_8h_1a93f69b081547cfbabc279cb2c9fa6796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void processLine</definition>
+        <argsstring>(char *str, unsigned int line_num)</argsstring>
+        <name>processLine</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>line_num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: processLine. Reads a line of CDL text and processes it into the data structure representing the circuit described by the text. Each word in the line of text represents a gate or a wire, and there are a maximum of 4 words in the line, with the second word being the gate, and the other words being wires. We can infer from the position of the word, aswell as the word itself, some of the properties of the gate/wire that the word represents.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line of CDL text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an integer specifying which line of CDL text is being passed, this paramater is only used to form an identifier for the gate (word 2) given by that line. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBG</emphasis>/printf(&quot;processLine (%d) :  %s\n&quot;,line_num,str); </para>        </inbodydescription>
+        <location file="circuits.h" line="67" column="1" bodyfile="circuits.c" bodystart="38" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a18c06211f3b107c5d6739275f11f3c9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int splitString</definition>
+        <argsstring>(char str[], char *dl, char **res)</argsstring>
+        <name>splitString</name>
+        <param>
+          <type>char</type>
+          <declname>str</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dl</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: splitString. Split a longer string into an array inidiviual words. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the delimitter to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to store the result. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="68" column="1" bodyfile="circuits.c" bodystart="328" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a5ddfc3fa0152d3b856a25913cc52dae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void trimString</definition>
+        <argsstring>(char *s)</argsstring>
+        <name>trimString</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintionL trimString. Remove leading and trailing whitespace from a string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="69" column="1" bodyfile="circuits.c" bodystart="344" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1aef6d49253cf9d94d8d713ae33647ef39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int is_empty</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>is_empty</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: is_empty. Test whether a string is &apos;empty&apos; i.e consists only of whitespace. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="70" column="1" bodyfile="circuits.c" bodystart="361" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a7b42efc046b8dfd12de296efdf71c6e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void append</definition>
+        <argsstring>(CircuitNode *new_node)</argsstring>
+        <name>append</name>
+        <param>
+          <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+          <declname>new_node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: append. Insert a new node into the circuit at the next availble position <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> to append to the circuit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBUG</emphasis>/printf(&quot;Appending new node to circuit:  %s\n&quot;,new_node-&gt;id); </para>        </inbodydescription>
+        <location file="circuits.h" line="71" column="1" bodyfile="circuits.c" bodystart="407" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a0887308e99554418eeffa007663fb4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>CircuitNode* findNodebyId</definition>
+        <argsstring>(char *id)</argsstring>
+        <name>findNodebyId</name>
+        <param>
+          <type>char *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: findNodebyId. Searches the circuit for a <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> with a particular id and returns a pointer to that node. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id to search for </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to that node, or NULL if the pointer cannot be found. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBG</emphasis>/printf(&quot;findNodebyId: %s\n&quot;,id); </para>        </inbodydescription>
+        <location file="circuits.h" line="72" column="1" bodyfile="circuits.c" bodystart="380" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a9c132a0a32e15ce166fc2f62aad8ccdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>CircuitNode* makeNode</definition>
+        <argsstring>(char *id, char *func)</argsstring>
+        <name>makeNode</name>
+        <param>
+          <type>char *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: makeNode. Dynamically allocates memory for a new node in the circuit, and fills that memory with a <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> struct, with the id (name) and the function of the struct set to the values given in arguments to the function. All other values are set to 0/NULL. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id member (name) of the new circuitnoe struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the func member of the new circuitnoe struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> for a description of the struct, and a list of possible functions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="73" column="1" bodyfile="circuits.c" bodystart="301" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1af8a26c93e74083be270953a078680549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printCircuit</definition>
+        <argsstring>(void)</argsstring>
+        <name>printCircuit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: printCircuit. Prints a textual representation of the circuit. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="74" column="1" bodyfile="circuits.c" bodystart="422" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a1a243d4c8eb56542a85a4dc895fe7d3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initCircuit</definition>
+        <argsstring>(void)</argsstring>
+        <name>initCircuit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: initCircuit. Initialize all ciruit elements to null </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="75" column="1" bodyfile="circuits.c" bodystart="397" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1af6824812ecb8b90642c8a257092037a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printNode</definition>
+        <argsstring>(CircuitNode *node)</argsstring>
+        <name>printNode</name>
+        <param>
+          <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: printNode. Prints a textual representation of a node in the citrcuit. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the node to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="76" column="1" bodyfile="circuits.c" bodystart="450" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1afc20341e57a9e282fbc6d399c1e9434c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printTruthTable</definition>
+        <argsstring>(bool reset)</argsstring>
+        <name>printTruthTable</name>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBG</emphasis>/printf(&quot;%d == %d == %d &quot;, states[circuit_run_time - 1], states[circuit_run_time - 2], states[circuit_run_time - 3]); </para>        </inbodydescription>
+        <location file="circuits.h" line="77" column="1" bodyfile="circuits.c" bodystart="264" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a7f916d90cb6210667dcf1e83a78b5179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printCircuitInputs</definition>
+        <argsstring>(void)</argsstring>
+        <name>printCircuitInputs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: printCircuitInputs Prints the name of each input wire in the circuit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="78" column="1" bodyfile="circuits.c" bodystart="233" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a2c382cc89424afb581af3990d427816a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void decimalToBinaryArray</definition>
+        <argsstring>(int decimal, int bin[], int numBits)</argsstring>
+        <name>decimalToBinaryArray</name>
+        <param>
+          <type>int</type>
+          <declname>decimal</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bin</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>r Function definition: decimalToBinaryArray. Convert a decinal number to binary number, stored with each digit in consecutive elements of an array. Uses a bitwise AND on repeated right bitshifts of the decimal number to isolate the particular bit in the decimal number we <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>decimal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decimal number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numBits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of the array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="79" column="1" bodyfile="circuits.c" bodystart="182" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1aea1bbd75f9735447a4fbb2938a7c188a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initializeCircuitInputs</definition>
+        <argsstring>(unsigned int i, bool reset, bool synchronous)</argsstring>
+        <name>initializeCircuitInputs</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><itemizedlist>
+<listitem><para>DBUG */ printf(&quot;found input&quot;); </para></listitem></itemizedlist>
+</para>        </inbodydescription>
+        <location file="circuits.h" line="80" column="1" bodyfile="circuits.c" bodystart="132" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1ac386c788fbf657860f2ad7441c3f7eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulateCircuit</definition>
+        <argsstring>(unsigned int i, bool reset, bool synchronous)</argsstring>
+        <name>simulateCircuit</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="81" column="1" bodyfile="circuits.c" bodystart="117" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1ad30ac95bb4a02ee5a24fe5e6d33bebce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void incrementCircuit</definition>
+        <argsstring>(bool synchronous)</argsstring>
+        <name>incrementCircuit</name>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: incrementCircuit. Calculate the state for each wire in the circuit. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>synchronous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to calculate the state in each wire based on the value of the state at the previous time in each wire. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBUG</emphasis>/printf(&quot;\nIncrementing internal state of circuit\n&quot;); </para>        </inbodydescription>
+        <location file="circuits.h" line="82" column="1" bodyfile="circuits.c" bodystart="461" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1afe7362221e82b709ff1c3aabedf6cdb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int getGateOutput</definition>
+        <argsstring>(CircuitNode *gate, bool synchronous)</argsstring>
+        <name>getGateOutput</name>
+        <param>
+          <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+          <declname>gate</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: getGateOutput. Calculate the output of a particular gate. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the gate to calculate the output for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>synchronous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to calculate the output synchrnously or asynchronously. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="circuits_8c_1ac386c788fbf657860f2ad7441c3f7eba" kindref="member">simulateCircuit</ref>. </para></simplesect>
+<simplesect kind="return"><para>the output of the gate. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="83" column="1" bodyfile="circuits.c" bodystart="497" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a0642dd3502cafed5966c7baa5ce69b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printTimeseries</definition>
+        <argsstring>(bool synchronous)</argsstring>
+        <name>printTimeseries</name>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: printTimeseries. Prints a timeseries for the circuit, showing the state in each wire over time, until the maximum circuit time is reached. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="84" column="1" bodyfile="circuits.c" bodystart="203" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1ad23ad6c9768a1d2ff303e3ae3179b931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int countInputs</definition>
+        <argsstring>(void)</argsstring>
+        <name>countInputs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: countInputs. Counts the number of input wires in the circuit <simplesect kind="return"><para>the number, as an unsigned integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="85" column="1" bodyfile="circuits.c" bodystart="247" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1ac197a63d771ecd1ad988578558771e31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setCircuitRunTime</definition>
+        <argsstring>(void)</argsstring>
+        <name>setCircuitRunTime</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: setCircuitRunTime. Calculates the maximum runtime for the circuit, to determine up to which point to simulate the circuit when writing a timeseries or truthtable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="86" column="1" bodyfile="circuits.c" bodystart="539" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a1cb66706c207899fc3a3f42f3fddabdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void freeCircuit</definition>
+        <argsstring>(void)</argsstring>
+        <name>freeCircuit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="87" column="1" bodyfile="circuits.c" bodystart="315" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8h_1a373b19b0c85c4f9a13e60b9e291ce65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isCircuitComplete</definition>
+        <argsstring>(void)</argsstring>
+        <name>isCircuitComplete</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: isCircuitComplete. Test if the circuit is &apos;fully formed&apos; i.e each node has an appropiate number of outputs/inputs connected, based on the function of that node. <simplesect kind="return"><para>whether the circuit is &apos;fully formed&apos; or not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="88" column="1" bodyfile="circuits.c" bodystart="559" bodyend="573"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>thie header file for the program, contaiing strcy defintions, function prototypes, and global variables. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>120011222</para></simplesect>
+<simplesect kind="date"><para>10/04/2018 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="comment">/**********************************************</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*****************<sp/>Globals<sp/>********************</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>***********************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>number<sp/>(1000000)<sp/>was<sp/>chosen<sp/>as<sp/>the<sp/>runtime<sp/>upper<sp/>limit<sp/>because<sp/>computing<sp/>truth<sp/>tables<sp/>and<sp/>timeseries<sp/>for<sp/>any<sp/>longer<sp/>times</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/>would<sp/>signifiicantly<sp/>reduce<sp/>performance.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="circuits_8h_1aa7deac37d97b85aae9a379c55f711954" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1aa7deac37d97b85aae9a379c55f711954" kindref="member">max_circuit_time</ref><sp/>=<sp/>1000000;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*If<sp/>every<sp/>node<sp/>in<sp/>the<sp/>circuit<sp/>was<sp/>a<sp/>wire,<sp/>given<sp/>the<sp/>runtime<sp/>limit,<sp/>there<sp/>could<sp/>be<sp/>a<sp/>maximum<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>Log2(max_circuit_time)<sp/>=<sp/>Log10(max_circuit_time)/Log10(2)<sp/>nodes<sp/>in<sp/>the<sp/>circuit,<sp/>so<sp/>therfore<sp/>this<sp/>number<sp/>(20)<sp/>was<sp/>chosen<sp/>as<sp/>the<sp/>maximum<sp/>circut<sp/>size</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>C99<sp/>does<sp/>not<sp/>have<sp/>a<sp/>log2<sp/>function,<sp/>so<sp/>we<sp/>must<sp/>convrert<sp/>to<sp/>log10.<sp/>I<sp/>have<sp/>chosen<sp/>to<sp/>precompute</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>this<sp/>number,<sp/>and<sp/>round<sp/>down<sp/>to<sp/>the<sp/>closest<sp/>integer,<sp/>so<sp/>as<sp/>to<sp/>improve<sp/>performance<sp/>of<sp/>the<sp/>program,<sp/>rather<sp/>than<sp/>computing<sp/>it<sp/>every<sp/>time<sp/>it<sp/>is<sp/>used.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref><sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>minimum<sp/>run<sp/>time<sp/>for<sp/>the<sp/>circuit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="circuits_8h_1af3d5a9601f1bb080e7c9d24666499d82" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1af3d5a9601f1bb080e7c9d24666499d82" kindref="member">min_circuit_time</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>current<sp/>time<sp/>at<sp/>which<sp/>the<sp/>circuit<sp/>is<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>run<sp/>time<sp/>for<sp/>the<sp/>circuit,<sp/>determined<sp/>by<sp/>the<sp/>size<sp/>of<sp/>the<sp/>circuit,</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">*<sp/>and<sp/>set<sp/>after<sp/>the<sp/>circuit<sp/>has<sp/>been<sp/>fully<sp/>formed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="circuits_8h_1af2b766444d39998c4a3f68c9ed947837" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1af2b766444d39998c4a3f68c9ed947837" kindref="member">circuit_run_time</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structCircuitNode" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39" refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>;<sp/></highlight><highlight class="comment">//<sp/>This<sp/>attribute<sp/>is<sp/>used<sp/>in<sp/>case<sp/>of<sp/>asynchronous<sp/>simulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>identifier<sp/>(name),<sp/>unique<sp/>in<sp/>the<sp/>circuit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>function<sp/>of<sp/>this<sp/>circuitnode.<sp/>See<sp/>below<sp/>for<sp/>a<sp/>list<sp/>of<sp/>all<sp/>possible<sp/>functions.<sp/>Depending<sp/>on<sp/>the<sp/>function,<sp/>only<sp/>some<sp/>of<sp/>the<sp/>members<sp/>of<sp/>the<sp/>struct<sp/>are<sp/>in<sp/>use.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>output<sp/>of<sp/>this<sp/>CircuitNode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>first<sp/>input<sp/>of<sp/>this<sp/>CircuitNode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>second<sp/>input<sp/>of<sp/>the<sp/>Circuit<sp/>Node,<sp/>only<sp/>used<sp/>in<sp/>case<sp/>of<sp/>binary<sp/>operators.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1aa7deac37d97b85aae9a379c55f711954" kindref="member">max_circuit_time</ref>];<sp/></highlight><highlight class="comment">//<sp/>This<sp/>attribute<sp/>is<sp/>used<sp/>in<sp/>case<sp/>of<sp/>synchronous<sp/>simulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<sp/><ref refid="circuits_8h_1a05384f0ec755cd00a8e4ed46677ccd42" kindref="member">CircuitNode</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">/*<sp/>The<sp/>curcuit,<sp/>an<sp/>array<sp/>of<sp/>CurcuitNode<sp/>elements<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" refkind="member"><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[<ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/**********************************************</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>**********<sp/>Function<sp/>protoypes<sp/>****************</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>***********************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a93f69b081547cfbabc279cb2c9fa6796" kindref="member">processLine</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line_num);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a18c06211f3b107c5d6739275f11f3c9e" kindref="member">splitString</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>str[],<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>res);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a5ddfc3fa0152d3b856a25913cc52dae4" kindref="member">trimString</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>s);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1aef6d49253cf9d94d8d713ae33647ef39" kindref="member">is_empty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7b42efc046b8dfd12de296efdf71c6e0" kindref="member">append</ref>(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>new_node);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="circuits_8h_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="circuits_8h_1a9c132a0a32e15ce166fc2f62aad8ccdf" kindref="member">makeNode</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1af8a26c93e74083be270953a078680549" kindref="member">printCircuit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a1a243d4c8eb56542a85a4dc895fe7d3a" kindref="member">initCircuit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1af6824812ecb8b90642c8a257092037a5" kindref="member">printNode</ref>(<sp/><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>node<sp/>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1afc20341e57a9e282fbc6d399c1e9434c" kindref="member">printTruthTable</ref>(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reset<sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7f916d90cb6210667dcf1e83a78b5179" kindref="member">printCircuitInputs</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a2c382cc89424afb581af3990d427816a" kindref="member">decimalToBinaryArray</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>decimal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bin[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numBits);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1aea1bbd75f9735447a4fbb2938a7c188a" kindref="member">initializeCircuitInputs</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reset,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1ac386c788fbf657860f2ad7441c3f7eba" kindref="member">simulateCircuit</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reset,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1ad30ac95bb4a02ee5a24fe5e6d33bebce" kindref="member">incrementCircuit</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1afe7362221e82b709ff1c3aabedf6cdb7" kindref="member">getGateOutput</ref>(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>gate,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a0642dd3502cafed5966c7baa5ce69b16" kindref="member">printTimeseries</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1ad23ad6c9768a1d2ff303e3ae3179b931" kindref="member">countInputs</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1ac197a63d771ecd1ad988578558771e31" kindref="member">setCircuitRunTime</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a1cb66706c207899fc3a3f42f3fddabdf" kindref="member">freeCircuit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a373b19b0c85c4f9a13e60b9e291ce65a" kindref="member">isCircuitComplete</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+    </programlisting>
+    <location file="circuits.h"/>
+  </compounddef>
+</doxygen>

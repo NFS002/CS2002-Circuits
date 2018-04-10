@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structCircuitNode" kind="struct" language="C++" prot="public">
+    <compoundname>CircuitNode</compoundname>
+    <includes refid="circuits_8h" local="no">circuits.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CircuitNode::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="39" column="1" bodyfile="circuits.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* CircuitNode::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="40" column="1" bodyfile="circuits.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* CircuitNode::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="41" column="1" bodyfile="circuits.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>struct CircuitNode* CircuitNode::out</definition>
+        <argsstring></argsstring>
+        <name>out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="42" column="1" bodyfile="circuits.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>struct CircuitNode* CircuitNode::inp_1</definition>
+        <argsstring></argsstring>
+        <name>inp_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="43" column="1" bodyfile="circuits.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCircuitNode_1a609d3938f14414cf88b0c56293598269" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>struct CircuitNode* CircuitNode::inp_2</definition>
+        <argsstring></argsstring>
+        <name>inp_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="44" column="1" bodyfile="circuits.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int CircuitNode::states[max_circuit_time]</definition>
+        <argsstring>[max_circuit_time]</argsstring>
+        <name>states</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.h" line="45" column="1" bodyfile="circuits.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>CircuitNode</label>
+        <link refid="structCircuitNode"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>out</edgelabel>
+          <edgelabel>inp_1</edgelabel>
+          <edgelabel>inp_2</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="circuits.h" line="38" column="1" bodyfile="circuits.h" bodystart="37" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>func</name></member>
+      <member refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>id</name></member>
+      <member refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>inp_1</name></member>
+      <member refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>inp_2</name></member>
+      <member refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>out</name></member>
+      <member refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>state</name></member>
+      <member refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" prot="public" virt="non-virtual"><scope>CircuitNode</scope><name>states</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

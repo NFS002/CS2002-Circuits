@@ -600,7 +600,7 @@ int main() {
   setCircuitRunTime();
   //printCircuit();
   printTruthTable(true);
-  //printTimeseries(true);
+  //printTimeseries(false);
   freeCircuit();
 	return 0;
 }

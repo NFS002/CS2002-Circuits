@@ -1,0 +1,318 @@
+\hypertarget{circuits_8c}{}\section{circuits.\+c File Reference}
+\label{circuits_8c}\index{circuits.\+c@{circuits.\+c}}
+
+
+this source file contains all function declerations necessary for building and running the program  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}circuits.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{circuits_8c_a93f69b081547cfbabc279cb2c9fa6796}{process\+Line} (char $\ast$str, unsigned int line\+\_\+num)
+\item 
+void \hyperlink{circuits_8c_ac386c788fbf657860f2ad7441c3f7eba}{simulate\+Circuit} (unsigned int i, bool reset, bool synchronous)
+\item 
+void \hyperlink{circuits_8c_aea1bbd75f9735447a4fbb2938a7c188a}{initialize\+Circuit\+Inputs} (unsigned int i, bool reset, bool synchronous)
+\item 
+void \hyperlink{circuits_8c_a2c382cc89424afb581af3990d427816a}{decimal\+To\+Binary\+Array} (int decimal, int bin\mbox{[}$\,$\mbox{]}, int num\+Bits)
+\item 
+void \hyperlink{circuits_8c_a0642dd3502cafed5966c7baa5ce69b16}{print\+Timeseries} (bool synchronous)
+\item 
+void \hyperlink{circuits_8c_a7f916d90cb6210667dcf1e83a78b5179}{print\+Circuit\+Inputs} (void)
+\item 
+unsigned int \hyperlink{circuits_8c_ad23ad6c9768a1d2ff303e3ae3179b931}{count\+Inputs} (void)
+\item 
+void \hyperlink{circuits_8c_afc20341e57a9e282fbc6d399c1e9434c}{print\+Truth\+Table} (bool reset)
+\item 
+\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$ \hyperlink{circuits_8c_a9c132a0a32e15ce166fc2f62aad8ccdf}{make\+Node} (char $\ast$id, char $\ast$func)
+\item 
+void \hyperlink{circuits_8c_a1cb66706c207899fc3a3f42f3fddabdf}{free\+Circuit} (void)
+\item 
+unsigned int \hyperlink{circuits_8c_a18c06211f3b107c5d6739275f11f3c9e}{split\+String} (char str\mbox{[}$\,$\mbox{]}, char $\ast$dl, char $\ast$$\ast$res)
+\item 
+void \hyperlink{circuits_8c_a5ddfc3fa0152d3b856a25913cc52dae4}{trim\+String} (char $\ast$s)
+\item 
+int \hyperlink{circuits_8c_aef6d49253cf9d94d8d713ae33647ef39}{is\+\_\+empty} (const char $\ast$s)
+\item 
+\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$ \hyperlink{circuits_8c_a0887308e99554418eeffa007663fb4f1}{find\+Nodeby\+Id} (char $\ast$id)
+\item 
+void \hyperlink{circuits_8c_a1a243d4c8eb56542a85a4dc895fe7d3a}{init\+Circuit} (void)
+\item 
+void \hyperlink{circuits_8c_a7b42efc046b8dfd12de296efdf71c6e0}{append} (\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$new\+\_\+node)
+\item 
+void \hyperlink{circuits_8c_af8a26c93e74083be270953a078680549}{print\+Circuit} (void)
+\item 
+void \hyperlink{circuits_8c_af6824812ecb8b90642c8a257092037a5}{print\+Node} (\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$node)
+\item 
+void \hyperlink{circuits_8c_ad30ac95bb4a02ee5a24fe5e6d33bebce}{increment\+Circuit} (bool synchronous)
+\item 
+unsigned int \hyperlink{circuits_8c_afe7362221e82b709ff1c3aabedf6cdb7}{get\+Gate\+Output} (\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$gate, bool synchronous)
+\item 
+void \hyperlink{circuits_8c_ac197a63d771ecd1ad988578558771e31}{set\+Circuit\+Run\+Time} (void)
+\item 
+bool \hyperlink{circuits_8c_a373b19b0c85c4f9a13e60b9e291ce65a}{is\+Circuit\+Complete} (void)
+\item 
+int \hyperlink{circuits_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this source file contains all function declerations necessary for building and running the program 
+
+\begin{DoxyAuthor}{Author}
+120011222
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/04/2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{circuits_8c_a7b42efc046b8dfd12de296efdf71c6e0}\label{circuits_8c_a7b42efc046b8dfd12de296efdf71c6e0}} 
+\index{circuits.\+c@{circuits.\+c}!append@{append}}
+\index{append@{append}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void append (\begin{DoxyParamCaption}\item[{\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$}]{new\+\_\+node }\end{DoxyParamCaption})}
+
+Function definition\+: append. Insert a new node into the circuit at the next availble position 
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+node} & the new \hyperlink{structCircuitNode}{Circuit\+Node} to append to the circuit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structCircuitNode}{Circuit\+Node} 
+\end{DoxySeeAlso}
+{\itshape D\+B\+UG}/printf(\char`\"{}\+Appending new node to circuit\+:  \%s\textbackslash{}n\char`\"{},new\+\_\+node-\/$>$id); \mbox{\Hypertarget{circuits_8c_ad23ad6c9768a1d2ff303e3ae3179b931}\label{circuits_8c_ad23ad6c9768a1d2ff303e3ae3179b931}} 
+\index{circuits.\+c@{circuits.\+c}!count\+Inputs@{count\+Inputs}}
+\index{count\+Inputs@{count\+Inputs}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{count\+Inputs()}{countInputs()}}
+{\footnotesize\ttfamily unsigned int count\+Inputs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function definition\+: count\+Inputs. Counts the number of input wires in the circuit \begin{DoxyReturn}{Returns}
+the number, as an unsigned integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{circuits_8c_a2c382cc89424afb581af3990d427816a}\label{circuits_8c_a2c382cc89424afb581af3990d427816a}} 
+\index{circuits.\+c@{circuits.\+c}!decimal\+To\+Binary\+Array@{decimal\+To\+Binary\+Array}}
+\index{decimal\+To\+Binary\+Array@{decimal\+To\+Binary\+Array}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{decimal\+To\+Binary\+Array()}{decimalToBinaryArray()}}
+{\footnotesize\ttfamily void decimal\+To\+Binary\+Array (\begin{DoxyParamCaption}\item[{int}]{decimal,  }\item[{int}]{bin\mbox{[}$\,$\mbox{]},  }\item[{int}]{num\+Bits }\end{DoxyParamCaption})}
+
+r Function definition\+: decimal\+To\+Binary\+Array. Convert a decinal number to binary number, stored with each digit in consecutive elements of an array. Uses a bitwise A\+ND on repeated right bitshifts of the decimal number to isolate the particular bit in the decimal number we 
+\begin{DoxyParams}{Parameters}
+{\em decimal} & the decimal number \\
+\hline
+{\em bin} & the array \\
+\hline
+{\em num\+Bits} & the length of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{circuits_8c_a0887308e99554418eeffa007663fb4f1}\label{circuits_8c_a0887308e99554418eeffa007663fb4f1}} 
+\index{circuits.\+c@{circuits.\+c}!find\+Nodeby\+Id@{find\+Nodeby\+Id}}
+\index{find\+Nodeby\+Id@{find\+Nodeby\+Id}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{find\+Nodeby\+Id()}{findNodebyId()}}
+{\footnotesize\ttfamily \hyperlink{structCircuitNode}{Circuit\+Node}$\ast$ find\+Nodeby\+Id (\begin{DoxyParamCaption}\item[{char $\ast$}]{id }\end{DoxyParamCaption})}
+
+Function defintion\+: find\+Nodeby\+Id. Searches the circuit for a \hyperlink{structCircuitNode}{Circuit\+Node} with a particular id and returns a pointer to that node. 
+\begin{DoxyParams}{Parameters}
+{\em id} & the id to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to that node, or N\+U\+LL if the pointer cannot be found. 
+\end{DoxyReturn}
+{\itshape D\+BG}/printf(\char`\"{}find\+Nodeby\+Id\+: \%s\textbackslash{}n\char`\"{},id); \mbox{\Hypertarget{circuits_8c_a1cb66706c207899fc3a3f42f3fddabdf}\label{circuits_8c_a1cb66706c207899fc3a3f42f3fddabdf}} 
+\index{circuits.\+c@{circuits.\+c}!free\+Circuit@{free\+Circuit}}
+\index{free\+Circuit@{free\+Circuit}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{free\+Circuit()}{freeCircuit()}}
+{\footnotesize\ttfamily void free\+Circuit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{circuits_8c_afe7362221e82b709ff1c3aabedf6cdb7}\label{circuits_8c_afe7362221e82b709ff1c3aabedf6cdb7}} 
+\index{circuits.\+c@{circuits.\+c}!get\+Gate\+Output@{get\+Gate\+Output}}
+\index{get\+Gate\+Output@{get\+Gate\+Output}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{get\+Gate\+Output()}{getGateOutput()}}
+{\footnotesize\ttfamily unsigned int get\+Gate\+Output (\begin{DoxyParamCaption}\item[{\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$}]{gate,  }\item[{bool}]{synchronous }\end{DoxyParamCaption})}
+
+Function defintion\+: get\+Gate\+Output. Calculate the output of a particular gate. 
+\begin{DoxyParams}{Parameters}
+{\em gate} & the gate to calculate the output for. \\
+\hline
+{\em synchronous} & whether to calculate the output synchrnously or asynchronously. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{circuits_8c_ac386c788fbf657860f2ad7441c3f7eba}{simulate\+Circuit}. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the output of the gate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{circuits_8c_ad30ac95bb4a02ee5a24fe5e6d33bebce}\label{circuits_8c_ad30ac95bb4a02ee5a24fe5e6d33bebce}} 
+\index{circuits.\+c@{circuits.\+c}!increment\+Circuit@{increment\+Circuit}}
+\index{increment\+Circuit@{increment\+Circuit}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{increment\+Circuit()}{incrementCircuit()}}
+{\footnotesize\ttfamily void increment\+Circuit (\begin{DoxyParamCaption}\item[{bool}]{synchronous }\end{DoxyParamCaption})}
+
+Function defintion\+: increment\+Circuit. Calculate the state for each wire in the circuit. 
+\begin{DoxyParams}{Parameters}
+{\em synchronous} & whether to calculate the state in each wire based on the value of the state at the previous time in each wire. \\
+\hline
+\end{DoxyParams}
+{\itshape D\+B\+UG}/printf(\char`\"{}\textbackslash{}n\+Incrementing internal state of circuit\textbackslash{}n\char`\"{}); \mbox{\Hypertarget{circuits_8c_a1a243d4c8eb56542a85a4dc895fe7d3a}\label{circuits_8c_a1a243d4c8eb56542a85a4dc895fe7d3a}} 
+\index{circuits.\+c@{circuits.\+c}!init\+Circuit@{init\+Circuit}}
+\index{init\+Circuit@{init\+Circuit}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{init\+Circuit()}{initCircuit()}}
+{\footnotesize\ttfamily void init\+Circuit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function defintion\+: init\+Circuit. Initialize all ciruit elements to null \mbox{\Hypertarget{circuits_8c_aea1bbd75f9735447a4fbb2938a7c188a}\label{circuits_8c_aea1bbd75f9735447a4fbb2938a7c188a}} 
+\index{circuits.\+c@{circuits.\+c}!initialize\+Circuit\+Inputs@{initialize\+Circuit\+Inputs}}
+\index{initialize\+Circuit\+Inputs@{initialize\+Circuit\+Inputs}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{initialize\+Circuit\+Inputs()}{initializeCircuitInputs()}}
+{\footnotesize\ttfamily void initialize\+Circuit\+Inputs (\begin{DoxyParamCaption}\item[{unsigned int}]{i,  }\item[{bool}]{reset,  }\item[{bool}]{synchronous }\end{DoxyParamCaption})}
+
+
+\begin{DoxyItemize}
+\item D\+B\+UG $\ast$/ printf(\char`\"{}found input\char`\"{}); 
+\end{DoxyItemize}\mbox{\Hypertarget{circuits_8c_aef6d49253cf9d94d8d713ae33647ef39}\label{circuits_8c_aef6d49253cf9d94d8d713ae33647ef39}} 
+\index{circuits.\+c@{circuits.\+c}!is\+\_\+empty@{is\+\_\+empty}}
+\index{is\+\_\+empty@{is\+\_\+empty}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{is\+\_\+empty()}{is\_empty()}}
+{\footnotesize\ttfamily int is\+\_\+empty (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Function defintion\+: is\+\_\+empty. Test whether a string is \textquotesingle{}empty\textquotesingle{} i.\+e consists only of whitespace. 
+\begin{DoxyParams}{Parameters}
+{\em s} & the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{circuits_8c_a373b19b0c85c4f9a13e60b9e291ce65a}\label{circuits_8c_a373b19b0c85c4f9a13e60b9e291ce65a}} 
+\index{circuits.\+c@{circuits.\+c}!is\+Circuit\+Complete@{is\+Circuit\+Complete}}
+\index{is\+Circuit\+Complete@{is\+Circuit\+Complete}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{is\+Circuit\+Complete()}{isCircuitComplete()}}
+{\footnotesize\ttfamily bool is\+Circuit\+Complete (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function definition\+: is\+Circuit\+Complete. Test if the circuit is \textquotesingle{}fully formed\textquotesingle{} i.\+e each node has an appropiate number of outputs/inputs connected, based on the function of that node. \begin{DoxyReturn}{Returns}
+whether the circuit is \textquotesingle{}fully formed\textquotesingle{} or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{circuits_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{circuits_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{circuits.\+c@{circuits.\+c}!main@{main}}
+\index{main@{main}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The main method. The entry point to the program. \begin{DoxyReturn}{Returns}
+the exit status of the program. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{circuits_8c_a9c132a0a32e15ce166fc2f62aad8ccdf}\label{circuits_8c_a9c132a0a32e15ce166fc2f62aad8ccdf}} 
+\index{circuits.\+c@{circuits.\+c}!make\+Node@{make\+Node}}
+\index{make\+Node@{make\+Node}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{make\+Node()}{makeNode()}}
+{\footnotesize\ttfamily \hyperlink{structCircuitNode}{Circuit\+Node}$\ast$ make\+Node (\begin{DoxyParamCaption}\item[{char $\ast$}]{id,  }\item[{char $\ast$}]{func }\end{DoxyParamCaption})}
+
+Function definition\+: make\+Node. Dynamically allocates memory for a new node in the circuit, and fills that memory with a \hyperlink{structCircuitNode}{Circuit\+Node} struct, with the id (name) and the function of the struct set to the values given in arguments to the function. All other values are set to 0/\+N\+U\+LL. 
+\begin{DoxyParams}{Parameters}
+{\em id} & the id member (name) of the new circuitnoe struct \\
+\hline
+{\em func} & the func member of the new circuitnoe struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structCircuitNode}{Circuit\+Node} for a description of the struct, and a list of possible functions. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{circuits_8c_af8a26c93e74083be270953a078680549}\label{circuits_8c_af8a26c93e74083be270953a078680549}} 
+\index{circuits.\+c@{circuits.\+c}!print\+Circuit@{print\+Circuit}}
+\index{print\+Circuit@{print\+Circuit}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{print\+Circuit()}{printCircuit()}}
+{\footnotesize\ttfamily void print\+Circuit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function defintion\+: print\+Circuit. Prints a textual representation of the circuit. \mbox{\Hypertarget{circuits_8c_a7f916d90cb6210667dcf1e83a78b5179}\label{circuits_8c_a7f916d90cb6210667dcf1e83a78b5179}} 
+\index{circuits.\+c@{circuits.\+c}!print\+Circuit\+Inputs@{print\+Circuit\+Inputs}}
+\index{print\+Circuit\+Inputs@{print\+Circuit\+Inputs}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{print\+Circuit\+Inputs()}{printCircuitInputs()}}
+{\footnotesize\ttfamily void print\+Circuit\+Inputs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function definition\+: print\+Circuit\+Inputs Prints the name of each input wire in the circuit \mbox{\Hypertarget{circuits_8c_af6824812ecb8b90642c8a257092037a5}\label{circuits_8c_af6824812ecb8b90642c8a257092037a5}} 
+\index{circuits.\+c@{circuits.\+c}!print\+Node@{print\+Node}}
+\index{print\+Node@{print\+Node}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{print\+Node()}{printNode()}}
+{\footnotesize\ttfamily void print\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{structCircuitNode}{Circuit\+Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Function defintion\+: print\+Node. Prints a textual representation of a node in the citrcuit. 
+\begin{DoxyParams}{Parameters}
+{\em node} & the node to print. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structCircuitNode}{Circuit\+Node} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{circuits_8c_a0642dd3502cafed5966c7baa5ce69b16}\label{circuits_8c_a0642dd3502cafed5966c7baa5ce69b16}} 
+\index{circuits.\+c@{circuits.\+c}!print\+Timeseries@{print\+Timeseries}}
+\index{print\+Timeseries@{print\+Timeseries}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{print\+Timeseries()}{printTimeseries()}}
+{\footnotesize\ttfamily void print\+Timeseries (\begin{DoxyParamCaption}\item[{bool}]{synchronous }\end{DoxyParamCaption})}
+
+Function definition\+: print\+Timeseries. Prints a timeseries for the circuit, showing the state in each wire over time, until the maximum circuit time is reached. \mbox{\Hypertarget{circuits_8c_afc20341e57a9e282fbc6d399c1e9434c}\label{circuits_8c_afc20341e57a9e282fbc6d399c1e9434c}} 
+\index{circuits.\+c@{circuits.\+c}!print\+Truth\+Table@{print\+Truth\+Table}}
+\index{print\+Truth\+Table@{print\+Truth\+Table}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{print\+Truth\+Table()}{printTruthTable()}}
+{\footnotesize\ttfamily void print\+Truth\+Table (\begin{DoxyParamCaption}\item[{bool}]{reset }\end{DoxyParamCaption})}
+
+{\itshape D\+BG}/printf(\char`\"{}\%d == \%d == \%d \char`\"{}, states\mbox{[}circuit\+\_\+run\+\_\+time -\/ 1\mbox{]}, states\mbox{[}circuit\+\_\+run\+\_\+time -\/ 2\mbox{]}, states\mbox{[}circuit\+\_\+run\+\_\+time -\/ 3\mbox{]}); \mbox{\Hypertarget{circuits_8c_a93f69b081547cfbabc279cb2c9fa6796}\label{circuits_8c_a93f69b081547cfbabc279cb2c9fa6796}} 
+\index{circuits.\+c@{circuits.\+c}!process\+Line@{process\+Line}}
+\index{process\+Line@{process\+Line}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{process\+Line()}{processLine()}}
+{\footnotesize\ttfamily void process\+Line (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{unsigned int}]{line\+\_\+num }\end{DoxyParamCaption})}
+
+Function definition\+: process\+Line. Reads a line of C\+DL text and processes it into the data structure representing the circuit described by the text. Each word in the line of text represents a gate or a wire, and there are a maximum of 4 words in the line, with the second word being the gate, and the other words being wires. We can infer from the position of the word, aswell as the word itself, some of the properties of the gate/wire that the word represents.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The line of C\+DL text \\
+\hline
+{\em line\+\_\+num} & an integer specifying which line of C\+DL text is being passed, this paramater is only used to form an identifier for the gate (word 2) given by that line. \\
+\hline
+\end{DoxyParams}
+{\itshape D\+BG}/printf(\char`\"{}process\+Line (\%d) \+:  \%s\textbackslash{}n\char`\"{},line\+\_\+num,str); \mbox{\Hypertarget{circuits_8c_ac197a63d771ecd1ad988578558771e31}\label{circuits_8c_ac197a63d771ecd1ad988578558771e31}} 
+\index{circuits.\+c@{circuits.\+c}!set\+Circuit\+Run\+Time@{set\+Circuit\+Run\+Time}}
+\index{set\+Circuit\+Run\+Time@{set\+Circuit\+Run\+Time}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{set\+Circuit\+Run\+Time()}{setCircuitRunTime()}}
+{\footnotesize\ttfamily void set\+Circuit\+Run\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Function defintion\+: set\+Circuit\+Run\+Time. Calculates the maximum runtime for the circuit, to determine up to which point to simulate the circuit when writing a timeseries or truthtable. \mbox{\Hypertarget{circuits_8c_ac386c788fbf657860f2ad7441c3f7eba}\label{circuits_8c_ac386c788fbf657860f2ad7441c3f7eba}} 
+\index{circuits.\+c@{circuits.\+c}!simulate\+Circuit@{simulate\+Circuit}}
+\index{simulate\+Circuit@{simulate\+Circuit}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{simulate\+Circuit()}{simulateCircuit()}}
+{\footnotesize\ttfamily void simulate\+Circuit (\begin{DoxyParamCaption}\item[{unsigned int}]{i,  }\item[{bool}]{reset,  }\item[{bool}]{synchronous }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{circuits_8c_a18c06211f3b107c5d6739275f11f3c9e}\label{circuits_8c_a18c06211f3b107c5d6739275f11f3c9e}} 
+\index{circuits.\+c@{circuits.\+c}!split\+String@{split\+String}}
+\index{split\+String@{split\+String}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{split\+String()}{splitString()}}
+{\footnotesize\ttfamily unsigned int split\+String (\begin{DoxyParamCaption}\item[{char}]{str\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{dl,  }\item[{char $\ast$$\ast$}]{res }\end{DoxyParamCaption})}
+
+Function defintion\+: split\+String. Split a longer string into an array inidiviual words. 
+\begin{DoxyParams}{Parameters}
+{\em str} & the string \\
+\hline
+{\em dl} & the delimitter to use \\
+\hline
+{\em res} & where to store the result. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{circuits_8c_a5ddfc3fa0152d3b856a25913cc52dae4}\label{circuits_8c_a5ddfc3fa0152d3b856a25913cc52dae4}} 
+\index{circuits.\+c@{circuits.\+c}!trim\+String@{trim\+String}}
+\index{trim\+String@{trim\+String}!circuits.\+c@{circuits.\+c}}
+\subsubsection{\texorpdfstring{trim\+String()}{trimString()}}
+{\footnotesize\ttfamily void trim\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Function defintionL trim\+String. Remove leading and trailing whitespace from a string. 
+\begin{DoxyParams}{Parameters}
+{\em s} & the string. \\
+\hline
+\end{DoxyParams}

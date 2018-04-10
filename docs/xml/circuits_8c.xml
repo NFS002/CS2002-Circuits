@@ -1,0 +1,1113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="circuits_8c" kind="file" language="C++">
+    <compoundname>circuits.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">ctype.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes refid="circuits_8h" local="yes">circuits.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="8">
+        <label>assert.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="0">
+        <label>circuits.c</label>
+        <link refid="circuits_8c"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>circuits.h</label>
+        <link refid="circuits_8h"/>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>math.h</label>
+      </node>
+      <node id="4">
+        <label>ctype.h</label>
+      </node>
+      <node id="1">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="circuits_8c_1a93f69b081547cfbabc279cb2c9fa6796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void processLine</definition>
+        <argsstring>(char *str, unsigned int line_num)</argsstring>
+        <name>processLine</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>line_num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: processLine. Reads a line of CDL text and processes it into the data structure representing the circuit described by the text. Each word in the line of text represents a gate or a wire, and there are a maximum of 4 words in the line, with the second word being the gate, and the other words being wires. We can infer from the position of the word, aswell as the word itself, some of the properties of the gate/wire that the word represents.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line of CDL text </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an integer specifying which line of CDL text is being passed, this paramater is only used to form an identifier for the gate (word 2) given by that line. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBG</emphasis>/printf(&quot;processLine (%d) :  %s\n&quot;,line_num,str); </para>        </inbodydescription>
+        <location file="circuits.c" line="38" column="1" bodyfile="circuits.c" bodystart="38" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1ac386c788fbf657860f2ad7441c3f7eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simulateCircuit</definition>
+        <argsstring>(unsigned int i, bool reset, bool synchronous)</argsstring>
+        <name>simulateCircuit</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="117" column="1" bodyfile="circuits.c" bodystart="117" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1aea1bbd75f9735447a4fbb2938a7c188a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initializeCircuitInputs</definition>
+        <argsstring>(unsigned int i, bool reset, bool synchronous)</argsstring>
+        <name>initializeCircuitInputs</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><itemizedlist>
+<listitem><para>DBUG */ printf(&quot;found input&quot;); </para></listitem></itemizedlist>
+</para>        </inbodydescription>
+        <location file="circuits.c" line="132" column="1" bodyfile="circuits.c" bodystart="132" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a2c382cc89424afb581af3990d427816a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void decimalToBinaryArray</definition>
+        <argsstring>(int decimal, int bin[], int numBits)</argsstring>
+        <name>decimalToBinaryArray</name>
+        <param>
+          <type>int</type>
+          <declname>decimal</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bin</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>r Function definition: decimalToBinaryArray. Convert a decinal number to binary number, stored with each digit in consecutive elements of an array. Uses a bitwise AND on repeated right bitshifts of the decimal number to isolate the particular bit in the decimal number we <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>decimal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the decimal number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numBits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of the array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="182" column="1" bodyfile="circuits.c" bodystart="182" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a0642dd3502cafed5966c7baa5ce69b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printTimeseries</definition>
+        <argsstring>(bool synchronous)</argsstring>
+        <name>printTimeseries</name>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: printTimeseries. Prints a timeseries for the circuit, showing the state in each wire over time, until the maximum circuit time is reached. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="203" column="1" bodyfile="circuits.c" bodystart="203" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a7f916d90cb6210667dcf1e83a78b5179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printCircuitInputs</definition>
+        <argsstring>(void)</argsstring>
+        <name>printCircuitInputs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: printCircuitInputs Prints the name of each input wire in the circuit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="233" column="1" bodyfile="circuits.c" bodystart="233" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1ad23ad6c9768a1d2ff303e3ae3179b931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int countInputs</definition>
+        <argsstring>(void)</argsstring>
+        <name>countInputs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: countInputs. Counts the number of input wires in the circuit <simplesect kind="return"><para>the number, as an unsigned integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="247" column="1" bodyfile="circuits.c" bodystart="247" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1afc20341e57a9e282fbc6d399c1e9434c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printTruthTable</definition>
+        <argsstring>(bool reset)</argsstring>
+        <name>printTruthTable</name>
+        <param>
+          <type>bool</type>
+          <declname>reset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBG</emphasis>/printf(&quot;%d == %d == %d &quot;, states[circuit_run_time - 1], states[circuit_run_time - 2], states[circuit_run_time - 3]); </para>        </inbodydescription>
+        <location file="circuits.c" line="264" column="1" bodyfile="circuits.c" bodystart="264" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a9c132a0a32e15ce166fc2f62aad8ccdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>CircuitNode* makeNode</definition>
+        <argsstring>(char *id, char *func)</argsstring>
+        <name>makeNode</name>
+        <param>
+          <type>char *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: makeNode. Dynamically allocates memory for a new node in the circuit, and fills that memory with a <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> struct, with the id (name) and the function of the struct set to the values given in arguments to the function. All other values are set to 0/NULL. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id member (name) of the new circuitnoe struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the func member of the new circuitnoe struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> for a description of the struct, and a list of possible functions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="301" column="1" bodyfile="circuits.c" bodystart="301" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a1cb66706c207899fc3a3f42f3fddabdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void freeCircuit</definition>
+        <argsstring>(void)</argsstring>
+        <name>freeCircuit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="315" column="1" bodyfile="circuits.c" bodystart="315" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a18c06211f3b107c5d6739275f11f3c9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int splitString</definition>
+        <argsstring>(char str[], char *dl, char **res)</argsstring>
+        <name>splitString</name>
+        <param>
+          <type>char</type>
+          <declname>str</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dl</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: splitString. Split a longer string into an array inidiviual words. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the delimitter to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>where to store the result. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="328" column="1" bodyfile="circuits.c" bodystart="328" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a5ddfc3fa0152d3b856a25913cc52dae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void trimString</definition>
+        <argsstring>(char *s)</argsstring>
+        <name>trimString</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintionL trimString. Remove leading and trailing whitespace from a string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="344" column="1" bodyfile="circuits.c" bodystart="344" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1aef6d49253cf9d94d8d713ae33647ef39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int is_empty</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>is_empty</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: is_empty. Test whether a string is &apos;empty&apos; i.e consists only of whitespace. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="361" column="1" bodyfile="circuits.c" bodystart="361" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a0887308e99554418eeffa007663fb4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+        <definition>CircuitNode* findNodebyId</definition>
+        <argsstring>(char *id)</argsstring>
+        <name>findNodebyId</name>
+        <param>
+          <type>char *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: findNodebyId. Searches the circuit for a <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> with a particular id and returns a pointer to that node. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id to search for </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to that node, or NULL if the pointer cannot be found. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBG</emphasis>/printf(&quot;findNodebyId: %s\n&quot;,id); </para>        </inbodydescription>
+        <location file="circuits.c" line="380" column="1" bodyfile="circuits.c" bodystart="380" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a1a243d4c8eb56542a85a4dc895fe7d3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initCircuit</definition>
+        <argsstring>(void)</argsstring>
+        <name>initCircuit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: initCircuit. Initialize all ciruit elements to null </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="397" column="1" bodyfile="circuits.c" bodystart="397" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a7b42efc046b8dfd12de296efdf71c6e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void append</definition>
+        <argsstring>(CircuitNode *new_node)</argsstring>
+        <name>append</name>
+        <param>
+          <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+          <declname>new_node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: append. Insert a new node into the circuit at the next availble position <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new <ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> to append to the circuit. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBUG</emphasis>/printf(&quot;Appending new node to circuit:  %s\n&quot;,new_node-&gt;id); </para>        </inbodydescription>
+        <location file="circuits.c" line="407" column="1" bodyfile="circuits.c" bodystart="407" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1af8a26c93e74083be270953a078680549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printCircuit</definition>
+        <argsstring>(void)</argsstring>
+        <name>printCircuit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: printCircuit. Prints a textual representation of the circuit. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="422" column="1" bodyfile="circuits.c" bodystart="422" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1af6824812ecb8b90642c8a257092037a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printNode</definition>
+        <argsstring>(CircuitNode *node)</argsstring>
+        <name>printNode</name>
+        <param>
+          <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: printNode. Prints a textual representation of a node in the citrcuit. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the node to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="450" column="1" bodyfile="circuits.c" bodystart="450" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1ad30ac95bb4a02ee5a24fe5e6d33bebce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void incrementCircuit</definition>
+        <argsstring>(bool synchronous)</argsstring>
+        <name>incrementCircuit</name>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: incrementCircuit. Calculate the state for each wire in the circuit. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>synchronous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to calculate the state in each wire based on the value of the state at the previous time in each wire. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><emphasis>DBUG</emphasis>/printf(&quot;\nIncrementing internal state of circuit\n&quot;); </para>        </inbodydescription>
+        <location file="circuits.c" line="461" column="1" bodyfile="circuits.c" bodystart="461" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1afe7362221e82b709ff1c3aabedf6cdb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int getGateOutput</definition>
+        <argsstring>(CircuitNode *gate, bool synchronous)</argsstring>
+        <name>getGateOutput</name>
+        <param>
+          <type><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref> *</type>
+          <declname>gate</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>synchronous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: getGateOutput. Calculate the output of a particular gate. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the gate to calculate the output for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>synchronous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether to calculate the output synchrnously or asynchronously. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="circuits_8c_1ac386c788fbf657860f2ad7441c3f7eba" kindref="member">simulateCircuit</ref>. </para></simplesect>
+<simplesect kind="return"><para>the output of the gate. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="497" column="1" bodyfile="circuits.c" bodystart="497" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1ac197a63d771ecd1ad988578558771e31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setCircuitRunTime</definition>
+        <argsstring>(void)</argsstring>
+        <name>setCircuitRunTime</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function defintion: setCircuitRunTime. Calculates the maximum runtime for the circuit, to determine up to which point to simulate the circuit when writing a timeseries or truthtable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="539" column="1" bodyfile="circuits.c" bodystart="539" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1a373b19b0c85c4f9a13e60b9e291ce65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isCircuitComplete</definition>
+        <argsstring>(void)</argsstring>
+        <name>isCircuitComplete</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function definition: isCircuitComplete. Test if the circuit is &apos;fully formed&apos; i.e each node has an appropiate number of outputs/inputs connected, based on the function of that node. <simplesect kind="return"><para>whether the circuit is &apos;fully formed&apos; or not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="559" column="1" bodyfile="circuits.c" bodystart="559" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="circuits_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The main method. The entry point to the program. <simplesect kind="return"><para>the exit status of the program. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="circuits.c" line="579" column="1" bodyfile="circuits.c" bodystart="579" bodyend="606"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>this source file contains all function declerations necessary for building and running the program </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>120011222</para></simplesect>
+<simplesect kind="date"><para>10/04/2018 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctype.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="circuits_8h" kindref="compound">circuits.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a93f69b081547cfbabc279cb2c9fa6796" kindref="member">processLine</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line_num)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>str_arr<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dl<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="circuits_8c_1a5ddfc3fa0152d3b856a25913cc52dae4" kindref="member">trimString</ref>(str);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>=<sp/><ref refid="circuits_8c_1a18c06211f3b107c5d6739275f11f3c9e" kindref="member">splitString</ref>(str,<sp/>dl,<sp/>str_arr);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>nodes[length];</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>length;<sp/>k++<sp/>)<sp/>nodes[k]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>word_num<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>assert(length<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>length<sp/>&lt;=<sp/>4);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(word_num<sp/>&lt;<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>word<sp/>=<sp/>strdup(str_arr[word_num]);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>gate_id<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>node<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(word_num){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3:<sp/></highlight><highlight class="comment">//WIRE:<sp/>ID<sp/>=<sp/>word,<sp/>FUNC<sp/>=<sp/>&quot;WIRE&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(word);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!node)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a9c132a0a32e15ce166fc2f62aad8ccdf" kindref="member">makeNode</ref>(word,</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a7b42efc046b8dfd12de296efdf71c6e0" kindref="member">append</ref>(node);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:<sp/></highlight><highlight class="comment">//<sp/>WIRE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(word);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!node)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a9c132a0a32e15ce166fc2f62aad8ccdf" kindref="member">makeNode</ref>(word,</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a7b42efc046b8dfd12de296efdf71c6e0" kindref="member">append</ref>(node);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:<sp/></highlight><highlight class="comment">//<sp/>GATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(gate_id,</highlight><highlight class="stringliteral">&quot;%s%d&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;g&quot;</highlight><highlight class="normal">,line_num);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a9c132a0a32e15ce166fc2f62aad8ccdf" kindref="member">makeNode</ref>(gate_id,word);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a7b42efc046b8dfd12de296efdf71c6e0" kindref="member">append</ref>(node);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:<sp/></highlight><highlight class="comment">//<sp/>WIRE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(word);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!node)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/><ref refid="circuits_8c_1a9c132a0a32e15ce166fc2f62aad8ccdf" kindref="member">makeNode</ref>(word,</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a7b42efc046b8dfd12de296efdf71c6e0" kindref="member">append</ref>(node);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[word_num]<sp/>=<sp/>node;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>word_num<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>&gt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[3]-&gt;<ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref><sp/>=<sp/>nodes[1];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[1]-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref><sp/>=<sp/>nodes[3];</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>&gt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[2]-&gt;<ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref><sp/>=<sp/>nodes[1];</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[1]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref><sp/>=<sp/>nodes[2];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[1]-&gt;<ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref><sp/>=<sp/>nodes[0];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>nodes[0]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref><sp/>=<sp/>nodes[1];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>free(str_arr);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>*</highlight></codeline>
+<codeline lineno="100"><highlight class="comment">*<sp/>Function<sp/>definition:<sp/>simulateCircuit.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment">*<sp/>Simulate<sp/>the<sp/>circuit<sp/>state<sp/>by<sp/>up<sp/>to<sp/>a<sp/>certain<sp/>time.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment">*<sp/>First<sp/>initialize<sp/>all<sp/>inputs<sp/>in<sp/>the<sp/>circut<sp/>to<sp/>a<sp/>particular<sp/>state</highlight></codeline>
+<codeline lineno="103"><highlight class="comment">*<sp/>and<sp/>then<sp/>repeatedly<sp/>calculate<sp/>the<sp/>consecutive<sp/>states<sp/>in<sp/>the<sp/>wires<sp/>of<sp/>the<sp/>circuit</highlight></codeline>
+<codeline lineno="104"><highlight class="comment">*<sp/>up<sp/>until<sp/>a<sp/>certain<sp/>time,<sp/>where<sp/>the<sp/>time<sp/>is<sp/>calculated<sp/>as<sp/>a<sp/>function<sp/>of<sp/>the<sp/>size<sp/>of<sp/>they</highlight></codeline>
+<codeline lineno="105"><highlight class="comment">*<sp/>curcuit.</highlight></codeline>
+<codeline lineno="106"><highlight class="comment">*<sp/>@param<sp/>i<sp/>input<sp/>initialisation<sp/>option,<sp/>i<sp/>should<sp/>not<sp/>be<sp/>larger<sp/>then<sp/>2^(number<sp/>of<sp/>inputs)</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">*<sp/>@paran<sp/>reset,<sp/>whether<sp/>the<sp/>initial<sp/>state<sp/>of<sp/>all<sp/>other<sp/>wires,<sp/>aside<sp/>from<sp/>the<sp/>input<sp/>should<sp/>be<sp/>&apos;reset&apos;</highlight></codeline>
+<codeline lineno="108"><highlight class="comment">*<sp/>to<sp/>0<sp/>at<sp/>the<sp/>beginning<sp/>of<sp/>a<sp/>simulation<sp/>run,<sp/>or<sp/>should<sp/>they<sp/>be<sp/>left<sp/>in<sp/>the<sp/>same<sp/>state<sp/>they<sp/>were<sp/>at<sp/>the</highlight></codeline>
+<codeline lineno="109"><highlight class="comment">*<sp/>end<sp/>of<sp/>the<sp/>previous<sp/>simulation.<sp/>Depending<sp/>on<sp/>the<sp/>type<sp/>of<sp/>circuit,<sp/>the<sp/>initial<sp/>state<sp/>of<sp/>each<sp/>wire<sp/>can<sp/>determine<sp/>whether<sp/>the<sp/>circuit</highlight></codeline>
+<codeline lineno="110"><highlight class="comment">*<sp/>will<sp/>eventually<sp/>stabilise<sp/>or<sp/>not.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment">*<sp/>@param<sp/>synchronous<sp/>If<sp/>true,<sp/>each<sp/>consecutive<sp/>state<sp/>of<sp/>a<sp/>particular<sp/>wire<sp/>is<sp/>calculated<sp/>for<sp/>a<sp/>particular</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">*<sp/>time,<sp/>and<sp/>in<sp/>each<sp/>wire<sp/>in<sp/>the<sp/>circuit,<sp/>the<sp/>state<sp/>at<sp/>time<sp/>(t)<sp/>is<sp/>calculated<sp/>as<sp/>a<sp/>function<sp/>of<sp/>the<sp/>state<sp/>in<sp/>the<sp/>circuit</highlight></codeline>
+<codeline lineno="113"><highlight class="comment">*<sp/>at<sp/>time<sp/>(t-1)</highlight></codeline>
+<codeline lineno="114"><highlight class="comment">*<sp/>If<sp/>false,<sp/>there<sp/>is<sp/>no<sp/>&apos;ordering&apos;<sp/>to<sp/>the<sp/>circuit,<sp/>nor<sp/>is<sp/>there<sp/>an<sp/>order<sp/>to<sp/>the<sp/>states<sp/>of<sp/>any<sp/>wire<sp/>in<sp/>the<sp/>ciruit,<sp/>and<sp/>the<sp/>simulatenoeous</highlight></codeline>
+<codeline lineno="115"><highlight class="comment">*<sp/>states<sp/>of<sp/>two<sp/>wires<sp/>in<sp/>the<sp/>circuit<sp/>are<sp/>not<sp/>necessarilly<sp/>happening<sp/>&apos;at<sp/>the<sp/>same<sp/>time&apos;</highlight></codeline>
+<codeline lineno="116"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1ac386c788fbf657860f2ad7441c3f7eba" kindref="member">simulateCircuit</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reset,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*<sp/>DBUG<sp/>*/<sp/>printf(&quot;Simulating<sp/>internal<sp/>state<sp/>of<sp/>circuit<sp/>with<sp/>input<sp/>options<sp/>(%d)<sp/>for<sp/>times<sp/>up<sp/>to<sp/>(%d)\n&quot;,i,circuit_run_time);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1aea1bbd75f9735447a4fbb2938a7c188a" kindref="member">initializeCircuitInputs</ref>(i,<sp/>reset,<sp/>synchronous);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/><ref refid="circuits_8h_1af2b766444d39998c4a3f68c9ed947837" kindref="member">circuit_run_time</ref>;<sp/>i++)<sp/><ref refid="circuits_8c_1ad30ac95bb4a02ee5a24fe5e6d33bebce" kindref="member">incrementCircuit</ref>(synchronous);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>*</highlight></codeline>
+<codeline lineno="124"><highlight class="comment">*<sp/>function<sp/>definition:<sp/>initializeCircuitInputs.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment">*<sp/>Set<sp/>the<sp/>state<sp/>of<sp/>each<sp/>input<sp/>wire<sp/>in<sp/>the<sp/>circuit.</highlight></codeline>
+<codeline lineno="126"><highlight class="comment">*<sp/>@param<sp/>i<sp/>the<sp/>input<sp/>option</highlight></codeline>
+<codeline lineno="127"><highlight class="comment">*<sp/>@param<sp/>reset<sp/>whether<sp/>to<sp/>reset<sp/>the<sp/>state<sp/>in<sp/>all<sp/>non-inputs<sp/>to<sp/>0</highlight></codeline>
+<codeline lineno="128"><highlight class="comment">*<sp/>@param<sp/>synchrnous<sp/>whether<sp/>the<sp/>simulation<sp/>should<sp/>be<sp/>calvculated<sp/>synchrnously</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">*<sp/>or<sp/>asynchronously</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">*<sp/>@see<sp/>simulateCircuit()</highlight></codeline>
+<codeline lineno="131"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1aea1bbd75f9735447a4fbb2938a7c188a" kindref="member">initializeCircuitInputs</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reset,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_inp<sp/>=<sp/><ref refid="circuits_8c_1ad23ad6c9768a1d2ff303e3ae3179b931" kindref="member">countInputs</ref>();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inp_arr[n_inp];</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>curr_inp<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a2c382cc89424afb581af3990d427816a" kindref="member">decimalToBinaryArray</ref>(i,<sp/>inp_arr,<sp/>n_inp);<sp/></highlight><highlight class="comment">//inp_arr<sp/>should<sp/>be<sp/>the<sp/>length<sp/>of<sp/>n_inp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>k++){</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k])<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref><sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(func<sp/>&amp;&amp;<sp/>!strcmp(func,</highlight><highlight class="stringliteral">&quot;IN&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/>inp_arr[curr_inp];</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/>inp_arr[curr_inp];</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr_inp<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>!strcmp(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;one&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>!strcmp(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;zero&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(reset){</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[circuit_run_time<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>else<sp/>(do<sp/>nothing,<sp/>state<sp/>remains<sp/>the<sp/>same)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a2c382cc89424afb581af3990d427816a" kindref="member">decimalToBinaryArray</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>decimal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bin[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numBits){</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numBits;<sp/>i++){</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bin[i]<sp/>=<sp/>1<sp/>&amp;<sp/>(decimal<sp/>&gt;&gt;<sp/>i);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//reverse<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>numBits<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(i<sp/>&gt;<sp/>j)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>temp<sp/>=<sp/>bin[i];</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>bin[i]<sp/>=<sp/>bin[j];</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>bin[j]<sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i--;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>j++;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a0642dd3502cafed5966c7baa5ce69b16" kindref="member">printTimeseries</ref>(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;t|&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="circuits_8h_1af2b766444d39998c4a3f68c9ed947837" kindref="member">circuit_run_time</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>circuit_run_time<sp/>-<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/>printf(</highlight><highlight class="stringliteral">&quot;%d,&quot;</highlight><highlight class="normal">,i);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;.<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d\n&quot;</highlight><highlight class="normal">,i);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1ac386c788fbf657860f2ad7441c3f7eba" kindref="member">simulateCircuit</ref>(0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>synchronous);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>n++)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[n])<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>func<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[n]-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(func<sp/>&amp;&amp;<sp/>!strcmp(func,</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s|&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[n]-&gt;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>0;<sp/>t<sp/>&lt;<sp/><ref refid="circuits_8h_1af2b766444d39998c4a3f68c9ed947837" kindref="member">circuit_run_time</ref>;<sp/>t++<sp/>){</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/>printf(</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[n]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[t]);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[n]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>&lt;<sp/>circuit_run_time<sp/>-<sp/>1)<sp/>printf(</highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a7f916d90cb6210667dcf1e83a78b5179" kindref="member">printCircuitInputs</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j])<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>func<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(func<sp/>&amp;&amp;<sp/>!strcmp(</highlight><highlight class="stringliteral">&quot;IN&quot;</highlight><highlight class="normal">,func))<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref>-&gt;<ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1ad23ad6c9768a1d2ff303e3ae3179b931" kindref="member">countInputs</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j])<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>func<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(func<sp/>&amp;&amp;<sp/>!strcmp(</highlight><highlight class="stringliteral">&quot;IN&quot;</highlight><highlight class="normal">,func))<sp/>n<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Function<sp/>which<sp/>prints<sp/>a<sp/>truth<sp/>table<sp/>for<sp/>the<sp/>circuit<sp/>to<sp/>stdout.<sp/>Every<sp/>possible<sp/>combination<sp/>of</highlight></codeline>
+<codeline lineno="259"><highlight class="comment">inputs<sp/>to<sp/>the<sp/>circut<sp/>are<sp/>looped<sp/>through,<sp/>and<sp/>with<sp/>each<sp/>combination,<sp/>the<sp/>state<sp/>of<sp/>each<sp/>wire<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="260"><highlight class="comment">circuit<sp/>is<sp/>calculated<sp/>until<sp/>the<sp/>circuit<sp/>stabilises<sp/>or<sp/>the<sp/>run_time_limit<sp/>for<sp/>the<sp/>circuit<sp/>is<sp/>reached.</highlight></codeline>
+<codeline lineno="261"><highlight class="comment">If<sp/>the<sp/>circuit<sp/>does<sp/>not<sp/>contain<sp/>an<sp/>ouput,<sp/>the<sp/>table<sp/>cannot<sp/>be<sp/>printed.<sp/>The<sp/>booleamn<sp/>parameter<sp/>&apos;reset&apos;</highlight></codeline>
+<codeline lineno="262"><highlight class="comment">is<sp/>used<sp/>to<sp/>indicate<sp/>whether<sp/>the<sp/>value<sp/>of<sp/>each<sp/>non-input<sp/>in<sp/>the<sp/>circuit<sp/>should<sp/>be<sp/>reset<sp/>to<sp/>0<sp/>at<sp/>the<sp/>start<sp/>of<sp/>each<sp/>simulation</highlight></codeline>
+<codeline lineno="263"><highlight class="comment">or<sp/>whether<sp/>they<sp/>should<sp/>be<sp/>left<sp/>in<sp/>the<sp/>same<sp/>state<sp/>as<sp/>they<sp/>ended<sp/>on,<sp/>in<sp/>the<sp/>previous<sp/>simulation.<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1afc20341e57a9e282fbc6d399c1e9434c" kindref="member">printTruthTable</ref>(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reset<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref><sp/>=<sp/><ref refid="circuits_8c_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(</highlight><highlight class="stringliteral">&quot;out&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!out)<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>out<sp/>=<sp/><ref refid="circuits_8c_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(</highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!out)<sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;No<sp/>circuit<sp/>output<sp/>found,<sp/>cannot<sp/>write<sp/>truth<sp/>table&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_inp<sp/>=<sp/><ref refid="circuits_8c_1ad23ad6c9768a1d2ff303e3ae3179b931" kindref="member">countInputs</ref>();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a7f916d90cb6210667dcf1e83a78b5179" kindref="member">printCircuitInputs</ref>();</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_combo_inp<sp/>=<sp/>pow(2,n_inp);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;out\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n_combo_inp;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1ac386c788fbf657860f2ad7441c3f7eba" kindref="member">simulateCircuit</ref>(i,<sp/>reset,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref><sp/>=<sp/>out-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inp_arr[n_inp];</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a2c382cc89424afb581af3990d427816a" kindref="member">decimalToBinaryArray</ref>(i,<sp/>inp_arr,<sp/>n_inp);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n_inp;<sp/>i++)<sp/>printf(</highlight><highlight class="stringliteral">&quot;%d<sp/>&quot;</highlight><highlight class="normal">,inp_arr[i]);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(states[circuit_run_time<sp/>-<sp/>1]<sp/>==<sp/>states[circuit_run_time<sp/>-<sp/>2])</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d\n&quot;</highlight><highlight class="normal">,states[circuit_run_time<sp/>-<sp/>1]);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;?\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="circuits_8c_1a9c132a0a32e15ce166fc2f62aad8ccdf" kindref="member">makeNode</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>func)<sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>new_node_p<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>));</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref><sp/>new_node<sp/>=<sp/>{0,<sp/><ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>,<sp/><ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>{0}};</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/>memcpy(new_node_p,&amp;new_node,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>));</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>new_node_p;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>*</highlight></codeline>
+<codeline lineno="309"><highlight class="comment">*<sp/>Function<sp/>definition:<sp/>freeCircuit</highlight></codeline>
+<codeline lineno="310"><highlight class="comment">*<sp/>Iterates<sp/>through<sp/>each<sp/>CircuitNode<sp/>of<sp/>the<sp/>circuit,</highlight></codeline>
+<codeline lineno="311"><highlight class="comment">*<sp/>freeing<sp/>the<sp/>memory<sp/>dynamically<sp/>allocated<sp/>for<sp/>each<sp/>node.</highlight></codeline>
+<codeline lineno="312"><highlight class="comment">*<sp/>@see<sp/>CircuitNode</highlight></codeline>
+<codeline lineno="313"><highlight class="comment">*<sp/>@see<sp/>makeNode</highlight></codeline>
+<codeline lineno="314"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a1cb66706c207899fc3a3f42f3fddabdf" kindref="member">freeCircuit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[i])<sp/>free(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[i]);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a18c06211f3b107c5d6739275f11f3c9e" kindref="member">splitString</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>str[],<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>res){</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*token<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*rest<sp/>=<sp/>str;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((token<sp/>=<sp/>strtok_r(rest,<sp/>dl,<sp/>&amp;rest)))<sp/>{</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res[i]<sp/>=<sp/>token;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a5ddfc3fa0152d3b856a25913cc52dae4" kindref="member">trimString</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>s)<sp/>{</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>p<sp/>=<sp/>s;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>strlen(p);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(isspace(p[l<sp/>-<sp/>1]))<sp/>p[--l]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(*p<sp/>&amp;&amp;<sp/>isspace(*<sp/>p)){</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++p;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>--l;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>memmove(s,<sp/>p,<sp/>l<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1aef6d49253cf9d94d8d713ae33647ef39" kindref="member">is_empty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s)<sp/>{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*s<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isspace((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)*s))</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>s++;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/><ref refid="circuits_8c_1a0887308e99554418eeffa007663fb4f1" kindref="member">findNodebyId</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>k++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k])<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>currId<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(currId<sp/>&amp;&amp;<sp/>!strcmp(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,currId))<sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k];</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//puts(&quot;Node<sp/>not<sp/>found,<sp/>returning<sp/>NULL&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a1a243d4c8eb56542a85a4dc895fe7d3a" kindref="member">initCircuit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>k++<sp/>)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a7b42efc046b8dfd12de296efdf71c6e0" kindref="member">append</ref>(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>new_node){</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>k++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k])<sp/>{</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]<sp/>=<sp/>new_node;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;Circuit<sp/>full,<sp/>append<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1af8a26c93e74083be270953a078680549" kindref="member">printCircuit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>){</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n---Print<sp/>circuit---\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>k++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k])<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Circuit<sp/>node<sp/>(%d):&quot;</highlight><highlight class="normal">,k);</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1af6824812ecb8b90642c8a257092037a5" kindref="member">printNode</ref>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]);</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;---Input<sp/>1----&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>)<sp/><ref refid="circuits_8c_1af6824812ecb8b90642c8a257092037a5" kindref="member">printNode</ref>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nNo<sp/>input<sp/><sp/>found\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;--------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;---Input<sp/>2----&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>)<ref refid="circuits_8c_1af6824812ecb8b90642c8a257092037a5" kindref="member">printNode</ref>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>);</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nNo<sp/>second<sp/>input<sp/>found\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;--------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;---Output---&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;out)<sp/><ref refid="circuits_8c_1af6824812ecb8b90642c8a257092037a5" kindref="member">printNode</ref>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[k]-&gt;out);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nNo<sp/>output<sp/>found\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;--------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;--------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="442"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="450"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1af6824812ecb8b90642c8a257092037a5" kindref="member">printNode</ref>(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>node<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nAddress:<sp/>(%p)\nId:<sp/><sp/>(%s)\nFunction:<sp/><sp/>(%s)\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>node,node-&gt;<ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>,node-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1ad30ac95bb4a02ee5a24fe5e6d33bebce" kindref="member">incrementCircuit</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous){</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j])<sp/>{</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>func<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]<sp/>-&gt;<sp/><ref refid="structCircuitNode_1a15f4689d56dc078c58f4d6282f4e5919" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;zero&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;one&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/><sp/>{</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;IN&quot;</highlight><highlight class="normal">,func))<sp/>{</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//else:<sp/>do<sp/>nothing,<sp/>state<sp/>remains<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">,func))<sp/>{</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref>]<sp/>=<sp/><ref refid="circuits_8c_1afe7362221e82b709ff1c3aabedf6cdb7" kindref="member">getGateOutput</ref>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>,<sp/>synchronous);</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>=<sp/><ref refid="circuits_8c_1afe7362221e82b709ff1c3aabedf6cdb7" kindref="member">getGateOutput</ref>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>,<sp/>synchronous);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="486"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1afe7362221e82b709ff1c3aabedf6cdb7" kindref="member">getGateOutput</ref>(<ref refid="structCircuitNode" kindref="compound">CircuitNode</ref>*<sp/>gate,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synchronous)<sp/>{</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;AND&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]<sp/>&amp;<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>&amp;<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;NAND&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]<sp/>&amp;<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>&amp;<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;OR&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]<sp/>|<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>|<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;NOR&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]<sp/>|<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>|<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>);</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;XOR&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]<sp/>^<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref><sp/>^<sp/>gate-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;IN&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;NOT&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1]);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Unknown<sp/>gate<sp/>function:<sp/>%s.<sp/>Assuming<sp/>buffer\n&quot;</highlight><highlight class="normal">,gate-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synchronous)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a8f10dc142952b047ec1985c8178dcd19" kindref="member">states</ref>[<ref refid="circuits_8h_1a4391c9a39a601602f9f3e97ada24a65f" kindref="member">curr_circuit_time</ref><sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gate-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>-&gt;<ref refid="structCircuitNode_1a92ac03847fccf255c8ac74820d6024bd" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="531"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="539"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1ac197a63d771ecd1ad988578558771e31" kindref="member">setCircuitRunTime</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j])<sp/>{</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>func<sp/>=<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a335f6ce4bad5e6a0607bcd3e32ef8ec5" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(func<sp/>&amp;&amp;<sp/>!strcmp(</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">,func))<sp/>n<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/>circuit_run_time<sp/>=<sp/>pow(2,n)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(circuit_run_time<sp/>&gt;<sp/><ref refid="circuits_8h_1aa7deac37d97b85aae9a379c55f711954" kindref="member">max_circuit_time</ref>)<sp/>circuit_run_time<sp/>=<sp/><ref refid="circuits_8h_1aa7deac37d97b85aae9a379c55f711954" kindref="member">max_circuit_time</ref>;</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(circuit_run_time<sp/>&lt;<sp/><ref refid="circuits_8h_1af3d5a9601f1bb080e7c9d24666499d82" kindref="member">min_circuit_time</ref>)<sp/>circuit_run_time<sp/>=<sp/><ref refid="circuits_8h_1af3d5a9601f1bb080e7c9d24666499d82" kindref="member">min_circuit_time</ref>;</highlight></codeline>
+<codeline lineno="550"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1a373b19b0c85c4f9a13e60b9e291ce65a" kindref="member">isCircuitComplete</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/>complete<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>;<sp/>j<sp/>&lt;<sp/><ref refid="circuits_8h_1a42554016b2ea5c010a2ad59c0ccf245f" kindref="member">circuit_size</ref>;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j])<sp/>{</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;one&quot;</highlight><highlight class="normal">,<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>||<sp/>!strcmp(</highlight><highlight class="stringliteral">&quot;zero&quot;</highlight><highlight class="normal">,<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/>complete<sp/>=<sp/>complete<sp/>&amp;&amp;<sp/>(!<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref><sp/>&amp;&amp;<sp/>!<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref><sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref>);</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;out&quot;</highlight><highlight class="normal">,<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/>complete<sp/>=<sp/>complete<sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref>;</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;WIRE&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;func))<sp/>complete<sp/>=<sp/>complete<sp/>&amp;&amp;<sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref><sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;out);</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;IN&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;func))<sp/>complete<sp/>=<sp/>complete<sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;out;</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strcmp(</highlight><highlight class="stringliteral">&quot;NOT&quot;</highlight><highlight class="normal">,<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;func))<sp/>complete<sp/>=<sp/>complete<sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref><sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;out;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>complete<sp/>=<sp/>complete<sp/>&amp;&amp;<sp/>(<ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a4fb522d50f094e61ac26e3ee82c1f347" kindref="member">inp_1</ref><sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1a609d3938f14414cf88b0c56293598269" kindref="member">inp_2</ref><sp/>&amp;&amp;<sp/><ref refid="circuits_8h_1a7211eaa01c1f1da8be5158a83a90806a" kindref="member">circuit</ref>[j]-&gt;<ref refid="structCircuitNode_1ab0a56d164e02e4512d74232d4b697243" kindref="member">out</ref>);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(j<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>complete);</highlight></codeline>
+<codeline lineno="573"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="circuits_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>all<sp/>circuit<sp/>elements<sp/>to<sp/>null<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><ref refid="circuits_8c_1a1a243d4c8eb56542a85a4dc895fe7d3a" kindref="member">initCircuit</ref>();</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"></highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>line<sp/>read<sp/>from<sp/>stdin<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>line<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>size<sp/>of<sp/>the<sp/>buffer<sp/>to<sp/>read<sp/>from<sp/>stdin<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Line<sp/>number,<sp/>used<sp/>to<sp/>identify<sp/>particular<sp/>gates<sp/>in<sp/>the<sp/>circuit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line_num<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Read<sp/>from<sp/>stdin<sp/>line<sp/>by<sp/>line,<sp/>and<sp/>build<sp/>the<sp/>circuit<sp/>with<sp/>each<sp/>line<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(&amp;line,<sp/>&amp;len,<sp/>stdin)<sp/>!=<sp/>-1){</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8c_1aef6d49253cf9d94d8d713ae33647ef39" kindref="member">is_empty</ref>(line))<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="circuits_8c_1a93f69b081547cfbabc279cb2c9fa6796" kindref="member">processLine</ref>(line,<sp/>line_num++);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="circuits_8c_1a373b19b0c85c4f9a13e60b9e291ce65a" kindref="member">isCircuitComplete</ref>())<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/>free(line);</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><ref refid="circuits_8c_1ac197a63d771ecd1ad988578558771e31" kindref="member">setCircuitRunTime</ref>();</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//printCircuit();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><ref refid="circuits_8c_1afc20341e57a9e282fbc6d399c1e9434c" kindref="member">printTruthTable</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//printTimeseries(true);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><ref refid="circuits_8c_1a1cb66706c207899fc3a3f42f3fddabdf" kindref="member">freeCircuit</ref>();</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="606"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="circuits.c"/>
+  </compounddef>
+</doxygen>

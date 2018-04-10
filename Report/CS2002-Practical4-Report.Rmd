@@ -36,13 +36,28 @@ This is best illustrated with an example:
 
 My program includes the function:
 
-```{C}
+```{}
 void printTimeseries(bool synchronous);
 ```
 
 where the argument `synchronous` indicates either synchronous (if true) or asynchronous (if false) simulation.
 
-Here is an example of a timeseries, calculated with the circuit described the CDL example in the appendix, this is calculated with synchronous simulation. 
+Here is an example of a synchnronous timeseries, calculated with the circuit described the CDL example 1.1 in the appendix, this is calculated with synchronous simulation.
+
+![Synchronous timeseries](imgs/sync-series.png)
+
+
+As you can see, the states of both wires change in simulation: Both follow the same sequenece. first 0, then 1, then 0, and so on...
+This is because the state of a wire in the circuit is calculated as a function of its input wires at the previous time. 
+So, in this case, the state of wire w at time t = 1 is calculated as the inverse of wire v t time t = 0. And the state of wire v at time t = 3 is calculated as the inverse of the state of wire w at time t = 2, and so on...
+
+If however, we were to calculate and print this timeseries asynronously, the ouput of this program is shown below:
+
+![Asynchronous timeseries](imgs/async-series.png)
+
+Now, we see the state of each wire at time t is calculated as the inverse of its input *at the same time* 
+
+
 
 ***
 
@@ -57,114 +72,100 @@ The program includes the function:
 void printTruthtable(bool resets);
 ```
 
-where the argument `resets` indicates whether the truth table should be constructed where the value of the input wires gradually changes whilst the circuit is still in simulation (if false) or whether the value of all other wires should be reset to 0 when the inputs are changed (if true.) The basic specification requires this argument to be true by default. The image below shows an example of a truth table, constructed with the circuit described the CDL example in the appendix, and computed with this argiment set to true (the standard setting).
+where the argument `resets` indicates whether the truth table should be constructed where the value of the input wires gradually changes whilst the circuit is still in simulation (if false) or whether the value of all other wires should be reset to 0 when the inputs are changed (if true.) The basic specification requires this argument to be true by default. The image below shows an example of a truth table, constructed with the circuit described the CDL example 1.2 in the appendix, and computed with this argument set to true (the standard setting).
 
+![Truth table](imgs/table-reset.png)
 
+When we change this argument to false, we cans see below the truth table produced is quite different. This is because, when this argument is true, the initial state of each non-input wire is 0, but when it is true, its initial state is whatever it was at the end of the previous simulation. The initial state of each input may change  whether the it will eventually stabilise or not. 
 
+![Truth table](imgs/table-cont.png)
 
+3. A third of my extensions involves validating user input when parsing the CDL, and is described in more detail in the design section below.
   
 *****
 
 ### Design
 
-When carrying out the specification, eventually, I ended with two different implementations, and two executables. The two executables are named `readmymind` and `readmymind_2` Both implementations however, feature the following struct definition to represent a Playing card.
+Design:
 
-```
-typedef struct {
-	 	char* suit;
-		char face;
-	} Card; 
-```
+When designing the program and implementing it, my design decisions were strongly influenced by the requirements, and some of the “simplifying” assumptions made
+By the requirements. For example, the choice to have each wire struct have an array of states as an attribute ’int states[max_run_time]' rather than just a single value was due to the synchronous simulation, were each index of the array represents the state of the wire at that time.
+There was also some sample code provided for us that demonstrated some useful functionality of reading from stdin line by line. I have used the program ‘doxygen' http://www.stack.nl/~dimitri/doxygen/ along with extensive commenting on the source code to generate automated documentation. These .html files can be found in the ‘/docs’ directory. However, some of my most major decisions, I will discuss in more detail.
+One of my most major design decisions was to include the function.
 
-The `suit` field of the struct is of type `char*` which is effectively a String, so it will be able to reference a unicode character which gives a text character symbol for the four suits in a deck of playing cards, rather than just a single character for 'H','S','C','D'.  Supporting this feature can be con considered an extension for this practical. 
+‘’'
+bool isCircuitComplete()
+‘’’
 
-The main difference between the two implementations was centered around this distinction between arrays and pointers. Once I had defined a `Card` It was then possible to define a `Deck` (of 52 cards), either as a Card[52], or as a Card*, or by
-
-```
-typedef Deck[52] Card;
-
-```
-Similarly a `Pile` (of 7 cards), a a `Pileset` (of 3 piles) may also have three differing defintions, thus a `Pileset` could either be declared as a
-```
-Card** pile;
-
--or-
-typedef Pile[7] Card;
-typdef Pileset[3] Pile;
-```
-
-
-I initially found this distinction confusing, but have discussed what I learnt about the functionality of arrays and pointers below.
-
-Another major design decision I made was to avoid the use of magic numbers, and so for all constants involved in the porogram, they were fined as preproccesor directives such as:
-
-```{C}
-#define           N_DECK 52
-#define           N_SUITS 4
-#define           N_FACES 13
-#define           N_PILE 7
-#define           N_SET 3
-#define           N_SORT 4
-```
-
-And then everywhere else in the program I needed to use these numbers, I could refer to them via `N_SET` rather than `3` The advantage of this was that it would easily allow me to change every occurence of this number in the program simply by changing one line in the header file. Another of the possible extensions was
-to experiment and find out if the trick worked for different values of the number of piles in a set, ot the number of cards in a pile, and this implementation allowed me easily to do that. I found that wih the current settings for N_PILE and N_SET, N_SORT could be incremented, and the trick would still function as usual, although could not find any alternate further values apart from this. With regards to the length of the columns, I found that any odd length of column that is divisible by 3 will also work. However, if the length of column is more than 11 than the trick requires 4 iterations of the sort(...) and gather(...) process to complete, whereas any less than 11, 3 itetaration will be sufficient.
-
-A final point on my design decisions involves the use of tge `memcpy(src, dest, size)` function that copies memory the contents of one memory address to another memory address. The memcpy() function is defined in the library `<string.h>` and I used this in place of regular assignment involving pointers. I have justified my decision to do this below:
-```{C}
-char *ptr;
-char *string = malloc(sizeof(char) * 10);
-```
-****
-```{C}
-
-ptr = string;
-
-vs.
-
-memcpy(ptr, string, sizeof(string));
-
-```
-
-The straight assignment will change the variable ptr to point to the same location that string points to, so they both are the same.  However memcpy() will copy sizeof(string) bytes from the location string points to to the location ptr points to, creating a new replica and pointing to that. If, however, ptr has not been initialized to point to a block of memory large enough to contain that many bytes, or if it has not been initialized at all, then the behavior is undefined. After the memcpy(), then each pointer points to a separate copy of the same data. Freeing one of them frees only that copy so it is still ok to dereference the other one.
-
-Therefore when using malloc() and free() when declaring pointers, using memcpy() will ensure the value pointed to by each pointer variable remains distinct from eachother, and it safe to call free()
-
-Another point is that since memcpy is therefore equivalent to the x86 assembkly command `mov` using memcpy in preference of assignemnt allows further room for compiler optimisation.
-
-
-__On the distinction between arrays and pointers:__
-
-Pointers and arrays are not equivalent, and a pointer expression is not generally equivalent to an array expression, however in some respects, they are similar. For example, Pointer arithmetic and array indexing are equivalent. Indexing works on both arrays and pointers. Similarly, pointer arithmetic works on both arrays and pointers, although the pointer implementation will always generally be faster. In other aspects, pointers and arrays are different. However when arrays passed into functions, they are always converted into pointers. The argument declaration char arr[3] is just syntactic sugar for char* arr. For an array, the comiler places the array at a fixed memory location.
-However, a pointer is an object that holds a memory address. Pointers are used to refer to memory where the data resides.
-Pointers are used for flexibility: you can refer to another object at run-time by changing the memory address stored inside the pointer variable.
-
-However, when an array name is passed to a function, what is passed is the location of the initial element. Within the called function, this argument is a local variable and so an array name parameter is a pointer, that is, a variable containing an address. 
+This function is run after each line of CDL text is processed, and iterate through the whole circuit, and returns true if every wire and gate in the circuit has an appropriate number of inputs and outputs for the specific function of that wire / gate. If any gate/wire in the circuit is ‘loose’ or the circuit is badly formed, this function will never return true. I use this function inside the loop in the main function, to determine at which point to stop reading lines from stdin, and when to break out of the loop, and begin simulating the circuit. This function protects from man possible errors that could arise from attempting to simulate a malformed circuit, and also serves to validate user input, since if the user input (CDL) is mistaken, the program will not end until the user corrects their previous mistakes. 
 
 
 *****
 ### Testing
 
-To test the the program, I used the llvm debugger to examine the assembly instructions and ensure each phase of the program was running as usual. I then also used valgrind to check there were no memory leaks from dynamically allocated blocks, see screenshot below.
+Since the design and specification was relatively complex, I found the program required extensive testing. The were five major tools I used to do this : 
 
+1. Print statements to stdout :
+I wrote print statements at the start and end of each function with ‘printf’ which displayed both the value of all arguments passed to each function and the return value. I also wrote print statements
+within each conditional branch of every function, and in this way I was able to track and confirm the flow of program at each stage.
+
+2. ‘void printCircuit()’
+This was a function that I wrote to print the formation and structure of a circuit after it has been fully formed, to ensure that my internal representation of the circuit was exactly the same as it was intended in the CDL.
+
+
+2. Lldb debugger
+This was particularly useful when dealing with errors such as segmentation faults, which may occur when reading from an address, or accessing a negative index of an array. The debugger was able to point me to the exact function where the fault occurred, as well as the assembly instructions that caused it, and so I was able to identify and correct the problem.
+
+3. Valgrind
+Valgrind is a program which is very useful when checking for memory leaks, so I could ensure that all memory allocated on the heap (via ‘malloc’) was correctly freed, and was not able to be accessed by another program, after this program ended. 
+
+5. Stacscheck. I passed all 5 out of 5 stacscheck tests (See appendix for screenshots)
+
+After utilising all of these strategies, I found my program to be very robust and secure.
 
 ****
 
 
 ### Running the program
 
-To compile and link the source files needed for both programs, please use the Makefile provided, along with the `all` target:
+To compile and link the source files needed for the program, please use the Makefile provided, along with the `circuits` target:
 
 ```
-$ make all
+$ make circuits
 
 ```
 
-This should produce the two executables, readmymind and readmymind_2.
+This should produce the executable `circuits` which can be executed with
 
+```
+$ ./circuits < srnandlatch.txt
+```
 *****
 
-### Conclusion
+### Evaluation
 
-Overall, I believe the practical was a success. I successfully completed all requirements, as well as some extensions. I believe this report documents and explains my findings well. The main diffuculties I encountered when dealing with arrays and pointers I overcame well, and have discussed in the _Design_ section.
+OIn conclusion, I did find writing this program particularly challenging, and encountered many difficulties along the way. However, I was very pleased with the final result, along with all the extensions that I successfully implemented.
+I am confident that I have also personally learnt a great deal concerning digital circuits.
+
+### Appendix
+
+*Example CDL 1.1 : srnandlatch.txt*
+
+s IN
+r IN
+out NAND s qbar
+qbar NAND r out
+
+*Example CDL 1.2 : notnot.txt*
+
+out NOT x
+x NOT out
+
+*Stacscheck ouput*
+
+![Truth table](imgs/stacscheck.png)
+
+
+
+
 

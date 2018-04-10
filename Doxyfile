@@ -1,0 +1,19 @@
+OUTPUT_DIRECTORY = docs
+
+EXTRACT_ALL = yes
+
+EXTRACT_PRIVATE = yes
+
+EXTRACT_STATIC = yes
+
+INPUT = circuits.c circuits.h
+
+FILE_PATTERNS =
+
+RECURSIVE = yes
+
+GENERATE_MAN = yes
+
+GENERATE_XML = yes
+
+GENERATE_RTF = yes
