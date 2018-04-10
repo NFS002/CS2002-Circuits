@@ -1,3 +1,12 @@
+/**
+* @file circuits.c
+* @brief this source file contains all function declerations necessary for building and running the program
+*
+* @author 120011222
+*
+* @date 10/04/2018
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
