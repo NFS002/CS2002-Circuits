@@ -1,7 +1,7 @@
 CC = clang
 FLAGS = -Wall -Wextra -O0
 
-all: circuit
+all: circuits
 
 clean:
 	rm -f circuits

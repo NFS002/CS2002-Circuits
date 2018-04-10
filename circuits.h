@@ -1,3 +1,11 @@
+/**
+* @file circuits.h
+* @brief thie header file for the program, contaiing strcy defintions, function prototypes, and global variables.
+*
+* @author 120011222
+*
+* @date 10/04/2018
+*/
 /**********************************************
  ***************** Globals ********************
  ***********************************************/
